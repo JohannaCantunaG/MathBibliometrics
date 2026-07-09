@@ -12,4 +12,4 @@ data/
 └── Statistics/
 ```
 Place every CSV exported from Scopus inside its correspongind subject folder.
-Theprocessing scripts automatically merge all CSV files found in each directory. 
+The processing scripts automatically merge all CSV files found in each directory. 
