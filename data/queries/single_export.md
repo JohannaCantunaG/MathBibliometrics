@@ -13,4 +13,9 @@ SUBJAREA ( MATH ) AND SUBJTERMS ( "Subject" ) AND PUBYEAR > 2002 AND PUBYEAR < 2
 
 | Subject | Exported files |
 |---------|----------------|
-| Algebra and Number Theory| |
+| Algebra and number theory| ´0_Algebra_and_Number_Theory_1.csv´,´Algebra_and_Number_Theory_1.csv´ |
+| Computational mathematics |´0_Computational_Mathematics_1.csv´,´Computational_Mathematics_1.csv´|
+| Geometry and topology |´0_Geometry_and_Topology_1.csv´,´Geometry_and_Topology_1.csv´|
+| Miscellaneous |´0_Miscellaneous_1.csv´,´Miscellaneous_1.csv´|
+
+All subjects in this document were using the same methodology.
