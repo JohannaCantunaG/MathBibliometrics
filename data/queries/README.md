@@ -2,4 +2,6 @@
 
 The data acquisition strategy depended on the number of records returned by each Scopus query. 
 - **Single export:** subjects with fewer than 20,000 records. See : `single_export.md`
-- **Multiple exports:** subjects exceeding the Scopus export limit, requering several CSV exports. See: `multiple_exports.md`
+- **Multiple exports:** subjects exceeding the Scopus export limit, requiring several CSV exports. See: `multiple_exports.md`
+
+The CSV files should correspond to direct exports from the Scopus web interface.
