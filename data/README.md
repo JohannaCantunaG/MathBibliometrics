@@ -6,6 +6,8 @@ Create the following directory structure:
 data/
 ├── Algebra_and_Number_Theory/
     ├── Algebra_and_Number_Theory_1.csv
+    ├── Algebra_and_Number_Theory_2.csv
+    └── ...
 ├── Analysis/
 ├── Applied_Mathematics/
 ├── ...
