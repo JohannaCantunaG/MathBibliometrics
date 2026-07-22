@@ -65,7 +65,8 @@ def plot_publications_annual_cumulative(
         cumulative_ylabel="Number of cumulative publications",
         annual_ylabel="Number of publications",
         add_legend=False,
-        cumulative_plain_ticks=False
+        cumulative_plain_ticks=False,
+        file_format = "pdf"
     ):
     
     fig, axes = plt.subplots(1, 2, figsize=(20, 6), constrained_layout = True)
@@ -96,7 +97,7 @@ def plot_publications_annual_cumulative(
 
     if cumulative_plain_ticks:
         axes[0].ticklabel_format(style="plain", axis="y")
-    fig.savefig(outdir / f"{outname}.pdf", format="pdf")
+    fig.savefig(outdir / f"{outname}.{file_format}", format=file_format)
     plt.show()
 
 def plot_global_segmented_fits(
@@ -114,6 +115,7 @@ def plot_global_segmented_fits(
         text_loc_global="tl",
         text_loc_pre="tl",
         text_loc_post="tr",
+        file_format = "pdf"
     ):
 
     fig, axes = plt.subplots(1, 2, figsize=(18, 6))
@@ -161,7 +163,7 @@ def plot_global_segmented_fits(
     )
 
     fig.subplots_adjust(wspace=0.2)
-    fig.savefig(outdir / f"{outname}.pdf", format="pdf", bbox_inches="tight")
+    fig.savefig(outdir / f"{outname}.{file_format}", format=file_format, bbox_inches="tight")
     plt.show()
 
 def plot_document_type_analysis(
@@ -177,6 +179,7 @@ def plot_document_type_analysis(
         title_share,
         histogram_log_scale=True,
         share_ylim=(0,100),
+        file_format = "pdf"
     ):
 
     if len(share_columns) != len(share_labels):
@@ -221,7 +224,7 @@ def plot_document_type_analysis(
 
     fig.subplots_adjust(wspace=0.35)
     fig.tight_layout()
-    fig.savefig(outdir / f"{outname}.pdf", format="pdf", bbox_inches="tight")
+    fig.savefig(outdir / f"{outname}.{file_format}", format=file_format, bbox_inches="tight")
     plt.show()
 
 def plot_author_communities_truncation_comparison(
@@ -237,6 +240,7 @@ def plot_author_communities_truncation_comparison(
         add_legend=True,
         text_loc_truncated="br",
         text_loc_full="br",
+        file_format = "pdf"
     ):
     
     fig, axes = plt.subplots(1, 2, figsize=(18, 6))
@@ -265,7 +269,7 @@ def plot_author_communities_truncation_comparison(
         text_loc=text_loc_full,
     )
     fig.subplots_adjust(wspace=0.1, bottom=0.18)
-    fig.savefig(outdir / f"{outname}.pdf", format="pdf", bbox_inches="tight",)
+    fig.savefig(outdir / f"{outname}.{file_format}", format=file_format, bbox_inches="tight",)
     plt.show()
 
 def plot_author_productivity_twofits_auto(
@@ -273,7 +277,8 @@ def plot_author_productivity_twofits_auto(
         best,
         name, 
         outdir,
-        outname 
+        outname,
+        file_format = "pdf"
     ):
     
     x = best["x"]
@@ -304,7 +309,7 @@ def plot_author_productivity_twofits_auto(
             transform=ax.transAxes, fontsize=12, fontname="Times New Roman", va="bottom", ha="left", bbox=dict(facecolor="white", alpha=0.7, edgecolor="none"))
     ax.legend(prop={"family": "Times New Roman", "size": 12})
     plt.tight_layout()
-    plt.savefig(outdir / f"{outname}.pdf", format="pdf", bbox_inches="tight")
+    plt.savefig(outdir / f"{outname}.{file_format}", format=file_format, bbox_inches="tight")
     plt.show()
     print("\n=== Two power-law fits (auto) ===")
     print("Break x ≈", best["break_x"])
@@ -321,7 +326,8 @@ def plot_bradford_single(
         x_dense,
         outdir,
         outname,
-        top_frac=0.10
+        top_frac=0.10,
+        file_format = "pdf"
     ):
     
     fig, ax = plt.subplots(figsize=(10, 6))
@@ -341,7 +347,7 @@ def plot_bradford_single(
             transform=ax.transAxes, fontsize=12, fontname="Times New Roman", bbox=dict(facecolor="white", alpha=0.7, edgecolor="none"))
     ax.legend(prop={"family": "Times New Roman", "size": 14})
     plt.tight_layout()
-    plt.savefig(outdir / f"{outname}.pdf", format="pdf", bbox_inches="tight")
+    plt.savefig(outdir / f"{outname}.{file_format}", format=file_format, bbox_inches="tight")
     plt.show()
     print(ax.get_ylim())
 
@@ -354,6 +360,7 @@ def plot_field_segmented_growth_group(
         figsize_unit=(6, 6),
         fontsize=20,
         use_semilogy=False,
+        file_format = "pdf"
     ):
     
     n_fields = len(fields_group)
@@ -403,7 +410,7 @@ def plot_field_segmented_growth_group(
             label.set_fontsize(19)
 
     fig.tight_layout()
-    fig.savefig(outdir / f"{outname}.pdf", format="pdf", bbox_inches="tight")
+    fig.savefig(outdir / f"{outname}.{file_format}", format=file_format, bbox_inches="tight")
     plt.show()
 
 def plot_community_fields_in_pages(
@@ -416,6 +423,7 @@ def plot_community_fields_in_pages(
         ncols=3,
         figsize=(18, 5),
         add_legend=False,
+        file_format = "pdf"
     ):
 
     pages = [fields[index:index + ncols] for index in range(0, len(fields), ncols)]
@@ -437,8 +445,8 @@ def plot_community_fields_in_pages(
             axes[index].set_title(field.replace("_", " "), fontname="Times New Roman", fontsize=fontsize)
 
         fig.tight_layout()
-        output_file = (outdir / f"{outname_prefix}_{page_number:02d}.pdf")
-        fig.savefig(output_file, format="pdf", bbox_inches="tight")
+        output_file = (outdir / f"{outname_prefix}_{page_number:02d}.{file_format}")
+        fig.savefig(output_file, format=file_format, bbox_inches="tight")
         plt.show()
 
 def plot_bradford_ax(
@@ -481,12 +489,13 @@ def plot_bradford_ax(
 def plot_bradford_fields_in_pages(
         fields,
         bradford_stats_by_field,
-        outdir_pdf,
+        outdir,
         top_frac=0.10,
         fontsize=20,
         ncols=3,
         fixed_ylim=None,
         outname_prefix="BradfordFields",
+        file_format = "pdf"
     ):
     
     missing_fields = [ field for field in fields if field not in bradford_stats_by_field]
@@ -514,7 +523,7 @@ def plot_bradford_fields_in_pages(
             )
             ax.set_title(field.replace("_", " "), fontname="Times New Roman", fontsize=fontsize)
         fig.tight_layout()
-        output_file = (outdir_pdf / f"{outname_prefix}_{page_number:02d}.pdf")
-        fig.savefig(output_file, format="pdf", bbox_inches="tight")
+        output_file = (outdir / f"{outname_prefix}_{page_number:02d}.{file_format}")
+        fig.savefig(output_file, format=file_format, bbox_inches="tight")
 
         plt.show()
