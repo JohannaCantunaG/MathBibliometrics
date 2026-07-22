@@ -9,12 +9,12 @@ The repository reproduces all figures presented in the manuscript.
 
 ### Publication growth 
 
-![Publication growth](figures/Fields0825CumAnnualCombined.pdf)
+![Publication growth](figures/Fields0825CumAnnualCombined.png)
 Growth of scientific production across the eleven Mathematics subject areas. 
 
 ### Bradford's law
 
-![Bradford](figures/Bradfordmath.pdf)
+![Bradford](figures/Bradfordmath.png)
 
 Bradford's law fitted to the cumulative journal productivity in Mathematics. 
 
