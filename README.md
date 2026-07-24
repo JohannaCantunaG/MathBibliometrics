@@ -12,22 +12,10 @@ The repository reproduces all figures presented in the manuscript.
 ![Publication growth](figures/Fields0825CumAnnualCombined.png)
 Growth of scientific production across the eleven Mathematics subject areas. 
 
-### Bradford's law
-
-![Bradford](figures/Bradfordmath.png)
-
-Bradford's law fitted to the cumulative journal productivity in Mathematics. 
-
 ## Repository structure
 ```text
 data/
   Instructions for organizing Scopus exports.
-
-src/
-  Python modules implementing the analysis. 
-
-Bibliometric_Analysis.ipynb
-  Main notebook reproducing all analyses and figures. 
 
 country_dic_types.ipynb
   Notebook used to build and validate the country dictionary. 
